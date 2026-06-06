@@ -202,10 +202,10 @@
   function initZScrollSections() {
     if (reduce) return;
 
-    var Z_GAP = 900;         // z-distance (px) between slides in 3D space
-    var PX_PER_SLIDE = 600;  // vertical scroll pixels per slide transition
+    var Z_GAP = 900;  // z-distance (px) between slides in 3D space
 
     Array.from(document.querySelectorAll('.z-area')).forEach(function (area) {
+      var PX_PER_SLIDE = parseInt(area.dataset.pxPerSlide || '600', 10);
       var belt   = area.querySelector('.z-belt');
       var slides = Array.from(area.querySelectorAll('.z-slide'));
       var dotsWrap = area.querySelector('.z-dots');

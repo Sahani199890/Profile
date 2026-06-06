@@ -281,8 +281,8 @@
             </div>
 
           </div>
-          <div class="z-dots"></div>
         </div>
+        <div class="z-dots"></div>
       </div>
     </div>
   </section>
@@ -293,94 +293,158 @@
       <span class="eyebrow" data-reveal>Selected work</span>
       <h2 class="section-title" data-reveal data-delay="60">Projects I'm proud of</h2>
     </div>
-    <div class="z-area">
+    <div class="z-area" data-px-per-slide="500">
       <div class="z-sticky z-sticky--dark">
         <div class="z-scene">
           <div class="z-belt">
 
-            <!-- Slide 1 — Projects 01 & 02 -->
-            <div class="z-slide">
-              <div class="z-project-pair">
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">01 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#2a4cf0,#0a1342)">🤖</div>
-                  <h3>QMentis — AI Quality Platform</h3>
-                  <p>Led the team building an AI platform that refines stories &amp; bugs and generates test cases and test designs. Deep two-way <b>Jira integration</b> plus a <b>RAG</b> pipeline on a <b>Pinecone</b> vector DB — made fully <b>LLM-agnostic</b> and delivered in 8 months.</p>
-                  <div class="pc-stack"><span>RAG</span><span>Pinecone</span><span>LLM Agnostic</span><span>Jira API</span><span>Spring Boot</span></div>
-                </article>
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">02 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#ffd21e,#f5b700)">📈</div>
-                  <h3>Configurable Dashboard</h3>
-                  <p>A no-code dashboard product — users compose dashboards through configuration instead of code, then publish them straight to the platform for their teams.</p>
-                  <div class="pc-stack"><span>React.js</span><span>Config-driven</span><span>Spring Boot</span></div>
-                </article>
+            <!-- 01 QMentis — illustration LEFT · text RIGHT -->
+            <div class="z-slide z-proj-slide zpj-1">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">01</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">🤖</div>
+                  <div class="zpj-viz-tags"><span>RAG</span><span>Pinecone</span><span>LLM</span><span>Jira API</span></div>
+                </div>
+                <div class="zpj-text" data-num="01">
+                  <div class="zpj-eyebrow">01 · Voltuswave · 2024</div>
+                  <h3 class="zpj-title">QMentis — AI Quality Platform</h3>
+                  <p class="zpj-desc">Led the team building an AI platform that refines stories &amp; bugs and generates test cases and test designs. Deep two-way <b>Jira integration</b> plus a <b>RAG</b> pipeline on a <b>Pinecone</b> vector DB — fully <b>LLM-agnostic</b>, shipped in 8 months.</p>
+                  <div class="zpj-stack"><span>RAG</span><span>Pinecone</span><span>LLM Agnostic</span><span>Jira API</span><span>React.js</span><span>Spring Boot</span></div>
+                </div>
               </div>
             </div>
 
-            <!-- Slide 2 — Projects 03 & 04 -->
-            <div class="z-slide">
-              <div class="z-project-pair">
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">03 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#0a1342,#2a4cf0)">🖥️</div>
-                  <h3>Offline-First Desktop App</h3>
-                  <p>Brought the full web platform into a cross-platform <b>Electron</b> desktop app with <b>SQLite</b> for in-app storage. Built a <b>sync engine</b> — work done offline is saved locally and automatically synced to the cloud database once back online.</p>
-                  <div class="pc-stack"><span>Electron</span><span>SQLite</span><span>Sync Engine</span><span>Offline-first</span></div>
-                </article>
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">04 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#1a32b8,#5e79ff)">🗄️</div>
-                  <h3>MySQL → StarRocks Migration</h3>
-                  <p>Migrated data from <b>MySQL</b> to a <b>StarRocks</b> warehouse to power the dashboards, running an <b>ELT</b> pipeline with <b>AWS DMS, Kinesis</b> and <b>Lambda</b> before loading into StarRocks.</p>
-                  <div class="pc-stack"><span>StarRocks</span><span>AWS DMS</span><span>Kinesis</span><span>Lambda</span><span>ELT</span></div>
-                </article>
+            <!-- 02 Configurable Dashboard — text LEFT · illustration RIGHT -->
+            <div class="z-slide z-proj-slide zpj-2 zpj-flip">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">02</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">📊</div>
+                  <div class="zpj-viz-tags"><span>React.js</span><span>Config-driven</span><span>No-Code</span></div>
+                </div>
+                <div class="zpj-text" data-num="02">
+                  <div class="zpj-eyebrow">02 · Voltuswave · 2024</div>
+                  <h3 class="zpj-title">Configurable Dashboard</h3>
+                  <p class="zpj-desc">A no-code dashboard product — users compose dashboards through <b>configuration</b> instead of code, then publish them straight to the platform. Gives non-technical teams full control over their data views without a single line of code.</p>
+                  <div class="zpj-stack"><span>React.js</span><span>Config-driven UI</span><span>Spring Boot</span><span>MySQL</span></div>
+                </div>
               </div>
             </div>
 
-            <!-- Slide 3 — Projects 05 & 06 -->
-            <div class="z-slide">
-              <div class="z-project-pair">
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">05 · RCHILLI</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#2a4cf0,#1a32b8)">🛒</div>
-                  <h3>Enrich Shopping Cart</h3>
-                  <p>Admin &amp; user UI in React.js plus Spring Boot backend services — improved page load time and reduced server response time, with 85–88% coverage across Jest (UI) and Mockito (API).</p>
-                  <div class="pc-stack"><span>React.js</span><span>Spring Boot</span><span>MySQL</span></div>
-                </article>
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">06 · RCHILLI</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#0a1342,#2a4cf0)">📊</div>
-                  <h3>Automate Taxonomy KPI</h3>
-                  <p>Automated data retrieval into CSV files, saving several hours of manual work each week. Achieved 85–88% code coverage using Mockito.</p>
-                  <div class="pc-stack"><span>Spring Boot</span><span>Java</span><span>Mockito</span></div>
-                </article>
+            <!-- 03 Offline Desktop App — illustration LEFT · text RIGHT -->
+            <div class="z-slide z-proj-slide zpj-3">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">03</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">🖥️</div>
+                  <div class="zpj-viz-tags"><span>Electron</span><span>SQLite</span><span>Sync Engine</span></div>
+                </div>
+                <div class="zpj-text" data-num="03">
+                  <div class="zpj-eyebrow">03 · Voltuswave · 2024</div>
+                  <h3 class="zpj-title">Offline-First Desktop App</h3>
+                  <p class="zpj-desc">Brought the full web platform into a cross-platform <b>Electron</b> desktop app with <b>SQLite</b> for local storage. Built a custom <b>sync engine</b> — work done offline is saved locally and automatically pushed to the cloud once the user reconnects.</p>
+                  <div class="zpj-stack"><span>Electron</span><span>SQLite</span><span>Sync Engine</span><span>Offline-first</span><span>React.js</span></div>
+                </div>
               </div>
             </div>
 
-            <!-- Slide 4 — Projects 07 & 08 -->
-            <div class="z-slide">
-              <div class="z-project-pair">
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">07 · PERSONAL</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#f5b700,#2a4cf0)">📝</div>
-                  <h3>Blogging Platform API</h3>
-                  <p>A social-media platform with full CRUD for posts and comments, keyword search and user-follow features — deployed on AWS EC2.</p>
-                  <div class="pc-stack"><span>Spring Boot</span><span>Hibernate</span><span>AWS EC2</span><span>Swagger</span></div>
-                </article>
-                <article class="project-card magnetic" data-tilt data-magnetic="0.08">
-                  <div class="pc-top"><span class="pc-num">08 · PERSONAL</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8" /></svg></span></div>
-                  <div class="pc-thumb" style="background:linear-gradient(135deg,#0a1342,#1a32b8)">🚗</div>
-                  <h3>Car Servicing Garage</h3>
-                  <p>A billing system for vehicle services built with Core Java and OOP concepts like loops and HashMap for clean, maintainable logic.</p>
-                  <div class="pc-stack"><span>Core Java</span><span>OOP</span></div>
-                </article>
+            <!-- 04 MySQL → StarRocks — text LEFT · illustration RIGHT -->
+            <div class="z-slide z-proj-slide zpj-4 zpj-flip">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">04</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">🗄️</div>
+                  <div class="zpj-viz-tags"><span>AWS DMS</span><span>Kinesis</span><span>Lambda</span><span>ELT</span></div>
+                </div>
+                <div class="zpj-text" data-num="04">
+                  <div class="zpj-eyebrow">04 · Voltuswave · 2024</div>
+                  <h3 class="zpj-title">MySQL → StarRocks Migration</h3>
+                  <p class="zpj-desc">Migrated production data from <b>MySQL</b> to a <b>StarRocks</b> analytical warehouse to power real-time dashboards. Ran an <b>ELT</b> pipeline via <b>AWS DMS</b>, <b>Kinesis</b> and <b>Lambda</b> to stream and transform data before loading into StarRocks.</p>
+                  <div class="zpj-stack"><span>StarRocks</span><span>AWS DMS</span><span>Kinesis</span><span>Lambda</span><span>ELT</span><span>MySQL</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 05 Enrich Shopping Cart — illustration LEFT · text RIGHT -->
+            <div class="z-slide z-proj-slide zpj-5">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">05</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">🛒</div>
+                  <div class="zpj-viz-tags"><span>React.js</span><span>Redux-Saga</span><span>Spring Boot</span></div>
+                </div>
+                <div class="zpj-text" data-num="05">
+                  <div class="zpj-eyebrow">05 · RChilli · 2023–24</div>
+                  <h3 class="zpj-title">Enrich Shopping Cart</h3>
+                  <p class="zpj-desc">Full-stack admin &amp; user UI in <b>React.js</b> with <b>Redux-Saga</b> plus <b>Spring Boot</b> backend services — improved page load time, reduced server response time and achieved <b>85–88% test coverage</b> across Jest and Mockito.</p>
+                  <div class="zpj-stack"><span>React.js</span><span>Redux-Saga</span><span>Spring Boot</span><span>MySQL</span><span>Jest</span><span>Mockito</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 06 Automate Taxonomy KPI — text LEFT · illustration RIGHT -->
+            <div class="z-slide z-proj-slide zpj-6 zpj-flip">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">06</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">⚙️</div>
+                  <div class="zpj-viz-tags"><span>Spring Boot</span><span>Java</span><span>Automation</span></div>
+                </div>
+                <div class="zpj-text" data-num="06">
+                  <div class="zpj-eyebrow">06 · RChilli · 2023–24</div>
+                  <h3 class="zpj-title">Automate Taxonomy KPI</h3>
+                  <p class="zpj-desc">Automated data retrieval into <b>CSV exports</b>, saving several hours of manual work each week. Wrote clean, testable <b>Java</b> services backed by <b>Spring Boot</b> and achieved <b>85–88% code coverage</b> with Mockito.</p>
+                  <div class="zpj-stack"><span>Spring Boot</span><span>Java</span><span>Mockito</span><span>CSV Export</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 07 Blogging Platform API — illustration LEFT · text RIGHT -->
+            <div class="z-slide z-proj-slide zpj-7">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">07</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">📝</div>
+                  <div class="zpj-viz-tags"><span>Spring Boot</span><span>Hibernate</span><span>AWS EC2</span></div>
+                </div>
+                <div class="zpj-text" data-num="07">
+                  <div class="zpj-eyebrow">07 · Personal Project</div>
+                  <h3 class="zpj-title">Blogging Platform API</h3>
+                  <p class="zpj-desc">A social-media style platform with full <b>CRUD</b> for posts and comments, <b>keyword search</b> and user-follow features. Built with <b>Spring Boot</b> &amp; <b>Hibernate</b>, documented with <b>Swagger</b> and deployed live on <b>AWS EC2</b>.</p>
+                  <div class="zpj-stack"><span>Spring Boot</span><span>Hibernate</span><span>MySQL</span><span>AWS EC2</span><span>Swagger</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 08 Car Servicing Garage — text LEFT · illustration RIGHT -->
+            <div class="z-slide z-proj-slide zpj-8 zpj-flip">
+              <div class="zpj-inner">
+                <div class="zpj-visual">
+                  <div class="zpj-num-bg">08</div>
+                  <div class="zpj-glow"></div>
+                  <div class="zpj-emoji">🚗</div>
+                  <div class="zpj-viz-tags"><span>Core Java</span><span>OOP</span><span>HashMap</span></div>
+                </div>
+                <div class="zpj-text" data-num="08">
+                  <div class="zpj-eyebrow">08 · Personal Project</div>
+                  <h3 class="zpj-title">Car Servicing Garage</h3>
+                  <p class="zpj-desc">A billing system for vehicle services built with <b>Core Java</b> — applying <b>OOP</b> principles, loops and <b>HashMap</b> for efficient service-record management and invoice generation. A clean, maintainable solution to a real-world workflow.</p>
+                  <div class="zpj-stack"><span>Core Java</span><span>OOP</span><span>Collections</span><span>HashMap</span></div>
+                </div>
               </div>
             </div>
 
           </div>
-          <div class="z-dots"></div>
         </div>
+        <div class="z-dots"></div>
       </div>
     </div>
   </section>
