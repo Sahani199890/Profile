@@ -457,3 +457,194 @@ section { position: relative; }
   .hero-sub, .hero-actions, .hero-meta, .hero-card { opacity: 1; }
   .hero h1 .hl::after { transform: scaleX(1); }
 }
+
+/* ============================================================
+   Z-SCROLL SYSTEM  (Experience + Projects tunnel scroll)
+   ============================================================ */
+
+/* Padded header above each z-scroll area */
+.section-z-header { padding: clamp(70px, 10vh, 130px) 0 36px; }
+
+/* Scroll-capture container — height set by JS */
+.z-area { position: relative; }
+
+/* Sticky viewport that stays fixed while the section scrolls */
+.z-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.z-sticky--dark { background: var(--surface-invert); }
+
+/* Perspective camera */
+.z-scene {
+  perspective: 1100px;
+  perspective-origin: 50% 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 3D belt that translateZ — JS drives this */
+.z-belt {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+/* Individual slide at its z-depth — opacity JS-driven */
+.z-slide {
+  position: absolute;
+  width: min(860px, 90vw);
+  left: calc(min(860px, 90vw) * -0.5);
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+}
+.z-slide.z-current { pointer-events: auto; }
+
+/* Wider slides for two-column project pairs */
+.projects .z-slide {
+  width: min(1060px, 92vw);
+  left: calc(min(1060px, 92vw) * -0.5);
+}
+
+/* Progress dots */
+.z-dots {
+  position: absolute;
+  right: clamp(14px, 3vw, 36px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 4;
+}
+.z-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background .3s, transform .3s;
+  cursor: pointer;
+}
+.z-sticky--dark .z-dot { background: rgba(255,255,255,.22); }
+.z-dot.is-active { background: var(--yellow); transform: scale(1.5); }
+
+/* ---- Job card ---- */
+.z-job-card {
+  background: var(--white);
+  border-radius: 26px;
+  padding: clamp(28px, 4.5vw, 52px);
+  box-shadow: 0 40px 100px -30px rgba(10,19,66,.2), 0 0 0 1px var(--line);
+}
+:root[data-theme="dark"] .z-job-card {
+  background: var(--surface-invert);
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,.55), 0 0 0 1px var(--line);
+}
+
+.zjc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.zjc-period {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--blue);
+  background: rgba(42,76,240,.09);
+  padding: 5px 13px;
+  border-radius: 999px;
+  display: inline-block;
+}
+:root[data-theme="dark"] .z-job-card .zjc-period {
+  color: var(--yellow);
+  background: rgba(255,210,30,.12);
+}
+.zjc-where { font-size: 13px; color: var(--muted); font-weight: 600; margin-top: 6px; }
+.zjc-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 32px);
+  color: var(--navy);
+  letter-spacing: -.04em;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.zjc-sep { color: var(--yellow); margin: 0 2px; }
+:root[data-theme="dark"] .z-job-card .zjc-num { color: var(--text-invert); }
+
+.zjc-role {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 3.8vw, 44px);
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  margin-bottom: 18px;
+}
+:root[data-theme="dark"] .z-job-card .zjc-role { color: var(--text-invert); }
+
+.zjc-desc {
+  color: var(--muted);
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.72;
+  max-width: 66ch;
+}
+.zjc-desc b { color: var(--navy); font-weight: 700; }
+:root[data-theme="dark"] .z-job-card .zjc-desc { color: rgba(255,255,255,.62); }
+:root[data-theme="dark"] .z-job-card .zjc-desc b { color: var(--text-invert); }
+
+.zjc-tags { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.zjc-tags span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--navy);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+:root[data-theme="dark"] .z-job-card .zjc-tags span {
+  background: rgba(255,255,255,.07);
+  color: var(--text-invert);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+}
+
+/* ---- Project pair ---- */
+.z-project-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Responsive z-scroll */
+@media (max-width: 700px) {
+  .z-slide, .projects .z-slide { width: 90vw; left: -45vw; }
+  .z-project-pair { grid-template-columns: 1fr; gap: 16px; max-height: 82vh; overflow-y: auto; }
+}
+@media (max-width: 560px) {
+  .zjc-head { flex-direction: column; gap: 8px; }
+}
+
+/* Reduced-motion fallback: show all slides stacked */
+@media (prefers-reduced-motion: reduce) {
+  .z-slide { opacity: 1 !important; pointer-events: auto !important; position: relative; left: auto; top: auto; }
+  .z-belt { width: 100%; height: auto; display: flex; flex-direction: column; gap: 32px; align-items: center; }
+  .z-area { height: auto !important; }
+  .z-sticky { position: relative; height: auto; }
+  .z-scene { perspective: none; height: auto; }
+}

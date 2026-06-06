@@ -198,6 +198,93 @@
     });
   }
 
+  /* ---------- Z-scroll tunnel (Experience + Projects) ---------- */
+  function initZScrollSections() {
+    if (reduce) return;
+
+    var Z_GAP = 900;         // z-distance (px) between slides in 3D space
+    var PX_PER_SLIDE = 600;  // vertical scroll pixels per slide transition
+
+    Array.from(document.querySelectorAll('.z-area')).forEach(function (area) {
+      var belt   = area.querySelector('.z-belt');
+      var slides = Array.from(area.querySelectorAll('.z-slide'));
+      var dotsWrap = area.querySelector('.z-dots');
+      var count  = slides.length;
+      if (!belt || count < 1) return;
+
+      // Single slide edge-case: just reveal it
+      if (count === 1) {
+        slides[0].style.opacity = '1';
+        slides[0].classList.add('z-current');
+        return;
+      }
+
+      // Size the scroll-capture area so normal scroll drives the z-camera
+      function resize() {
+        area.style.height = (window.innerHeight + (count - 1) * PX_PER_SLIDE) + 'px';
+      }
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      // Assign each slide its fixed z-depth inside the belt
+      slides.forEach(function (slide, i) {
+        slide.style.transform = 'translateY(-50%) translateZ(' + (-i * Z_GAP) + 'px)';
+      });
+
+      // Build progress dots
+      var dots = [];
+      if (dotsWrap) {
+        slides.forEach(function (_, i) {
+          var d = document.createElement('div');
+          d.className = 'z-dot' + (i === 0 ? ' is-active' : '');
+          dotsWrap.appendChild(d);
+          dots.push(d);
+        });
+      }
+
+      var lastIdx = -1;
+      var rafId   = null;
+
+      function update() {
+        rafId = null;
+        var rect      = area.getBoundingClientRect();
+        var maxScroll = (count - 1) * PX_PER_SLIDE;
+        var scrolled  = Math.max(0, Math.min(-rect.top, maxScroll));
+        // Move the belt forward in z as the user scrolls
+        var trackZ = (scrolled / maxScroll) * (count - 1) * Z_GAP;
+        belt.style.transform = 'translateZ(' + trackZ.toFixed(1) + 'px)';
+
+        // Active slide index + dots
+        var idx = Math.min(count - 1, Math.round(scrolled / PX_PER_SLIDE));
+        if (idx !== lastIdx) {
+          lastIdx = idx;
+          dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+          slides.forEach(function (s, i) { s.classList.toggle('z-current', i === idx); });
+        }
+
+        // Per-slide opacity: full at camera (effZ≈0), fade beyond ±threshold
+        slides.forEach(function (slide, i) {
+          var effZ = -i * Z_GAP + trackZ;  // positive = in front of camera
+          var opacity;
+          if (effZ > 150) {
+            // Slide has passed the camera — fade out quickly
+            opacity = Math.max(0, 1 - (effZ - 150) / 250);
+          } else {
+            var dist = Math.abs(effZ);
+            opacity = Math.max(0, 1 - Math.max(0, dist - 60) / 500);
+          }
+          slide.style.opacity = opacity.toFixed(3);
+        });
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!rafId) rafId = requestAnimationFrame(update);
+      }, { passive: true });
+
+      update();
+    });
+  }
+
   /* ---------- Tilt on project cards ---------- */
   function initTilt() {
     if (!isFine || reduce) return;
@@ -217,6 +304,7 @@
   function init() {
     initCursor();
     initMagnetic();
+    initZScrollSections();
     initReveals();
     initParallax();
     initScrollUI();
