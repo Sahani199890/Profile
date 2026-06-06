@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abhishek Sahani — Full-Stack Software Engineer</title>
+<script>
+  /* Set the theme before first paint to avoid a flash of the wrong theme. */
+  (function () {
+    try {
+      var t = localStorage.getItem('theme');
+      if (t !== 'dark' && t !== 'light') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- Scroll progress -->
+<div class="progress-bar"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="mark">AS</span>
+      Abhishek Sahani
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="nav-cta magnetic" data-magnetic="0.25">Let's talk →</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle light / dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top" data-screen-label="Hero">
+  <div class="hero-grid" data-parallax="0.04"></div>
+  <div class="blob blob-1" data-parallax="0.12"></div>
+  <div class="blob blob-2" data-parallax="0.16"></div>
+
+  <div class="wrap">
+    <div class="hero-left">
+      <span class="hero-tag"><span class="dot"></span> Team Lead · AI + Full-Stack</span>
+      <h1>
+        <span class="line"><span>Full-Stack</span></span>
+        <span class="line"><span><span class="hl">+ AI</span> Engineer.</span></span>
+      </h1>
+      <p class="hero-sub">I'm Abhishek Sahani — a Software Engineer leading teams to build AI-powered, full-stack products with React.js, Spring Boot, RAG &amp; LLM-agnostic architectures.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary magnetic" data-magnetic="0.3">
+          View my work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic" data-magnetic="0.3">Get in touch</a>
+      </div>
+      <div class="hero-meta">
+        <div class="stat"><div class="n">2+</div><div class="l">Years experience</div></div>
+        <div class="stat"><div class="n">9+</div><div class="l">Projects delivered</div></div>
+        <div class="stat"><div class="n">AI</div><div class="l">RAG · LLM agnostic</div></div>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-ring"></div>
+      <div class="portrait">
+        <div class="ph-emoji">👨‍💻</div>
+        <div class="ph-label">Send me a photo to drop in here — Abhishek Sahani</div>
+      </div>
+      <div class="hero-badge badge-a">
+        <span class="ic" style="background:rgba(42,76,240,.12)">⚛️</span>
+        <span><span class="t">Frontend</span><br><span class="v">React · Redux</span></span>
+      </div>
+      <div class="hero-badge badge-b">
+        <span class="ic" style="background:rgba(255,210,30,.22)">🤖</span>
+        <span><span class="t">AI / RAG</span><br><span class="v">Pinecone · LLMs</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span class="mouse"></span>
+    Scroll
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>AI / RAG</span><span class="star">✦</span><span>Pinecone</span><span class="star">✦</span><span>React.js</span><span class="star">✦</span><span>Spring Boot</span><span class="star">✦</span><span>LLM Agnostic</span><span class="star">✦</span><span>Java</span><span class="star">✦</span><span>Microservices</span><span class="star">✦</span></div>
+    <div class="marquee-item"><span>AI / RAG</span><span class="star">✦</span><span>Pinecone</span><span class="star">✦</span><span>React.js</span><span class="star">✦</span><span>Spring Boot</span><span class="star">✦</span><span>LLM Agnostic</span><span class="star">✦</span><span>Java</span><span class="star">✦</span><span>Microservices</span><span class="star">✦</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about section-pad" id="about" data-screen-label="About">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <span class="eyebrow" data-reveal>About me</span>
+      <h2 class="section-title" data-reveal data-delay="60">Full-stack engineer bringing AI to real products.</h2>
+      <p class="about-lead" data-reveal data-delay="120" style="margin-top:26px">Software Engineer with <b>2+ years</b> across full-stack and AI — currently <b>leading a team at Voltuswave</b> building React.js, Spring Boot and <b>RAG-powered</b> products.</p>
+      <p data-reveal data-delay="180">I led QMentis, an AI platform that refines stories, bugs and generates test cases &amp; test designs — deeply integrated with Jira and built on a Pinecone-backed, LLM-agnostic RAG architecture. I care about clean code, debugging, optimization and mentoring — and I love turning complex requirements into products that just work.</p>
+      <div class="about-tags" data-reveal data-delay="240">
+        <span class="chip">Team leadership</span>
+        <span class="chip">AI / RAG</span>
+        <span class="chip">Problem solver</span>
+        <span class="chip">Optimization</span>
+        <span class="chip">Agile / Scrum</span>
+      </div>
+    </div>
+    <div class="about-visual" data-reveal="right" data-delay="120">
+      <div class="about-card" data-parallax="0.05">
+        <h3>Quick facts</h3>
+        <div class="about-list">
+          <div class="row"><span class="k">Role</span><span class="vv">Software Engineer · Team Lead</span></div>
+          <div class="row"><span class="k">Company</span><span class="vv">Voltuswave Pvt Ltd · Hyderabad</span></div>
+          <div class="row"><span class="k">Focus</span><span class="vv">AI / RAG, React.js, Spring Boot</span></div>
+          <div class="row"><span class="k">Email</span><span class="vv"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cfbcaea7aea1a6fef6f6f7f6ff8fa8a2aea6a3e1aca0a2">[email&#160;protected]</a></span></div>
+          <div class="row"><span class="k">Phone</span><span class="vv">+91-8639897979</span></div>
+          <div class="row"><span class="k">Speaks</span><span class="vv">English, Hindi, Telugu, Bhojpuri</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats section-pad" style="padding-top:0">
+  <div class="wrap stats-grid">
+    <div class="stat-card" data-reveal="scale"><span class="corner"></span><div class="big"><span data-count="2">0</span><span class="suf">+</span></div><div class="cap">Years of experience</div></div>
+    <div class="stat-card" data-reveal="scale" data-delay="80"><span class="corner"></span><div class="big"><span data-count="8">0</span><span class="suf">mo</span></div><div class="cap">QMentis delivery</div></div>
+    <div class="stat-card" data-reveal="scale" data-delay="160"><span class="corner"></span><div class="big"><span data-count="88">0</span><span class="suf">%</span></div><div class="cap">Peak code coverage</div></div>
+    <div class="stat-card" data-reveal="scale" data-delay="240"><span class="corner"></span><div class="big"><span data-count="20">0</span><span class="suf">%</span></div><div class="cap">Performance boost</div></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work section-pad" id="work" data-screen-label="Experience">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Experience</span>
+    <h2 class="section-title" data-reveal data-delay="60">Where I've worked</h2>
+    <div class="timeline">
+      <div class="job" data-reveal>
+        <div class="meta"><div class="when">Nov 2024 — Present</div><div class="where">Voltuswave Pvt Ltd · Hyderabad</div></div>
+        <div class="body">
+          <div class="role">Software Engineer · Team Lead</div>
+          <p class="desc">Led the team on <b>QMentis</b>, an AI platform that refines stories &amp; bugs and generates test cases and test designs. Built a deep two-way <b>Jira integration</b> and a <b>RAG</b> pipeline on a <b>Pinecone</b> vector database, made <b>LLM-agnostic</b> and delivered in 8 months. Also built a <b>configurable dashboard</b> product, an <b>offline-first Electron desktop app</b> (SQLite + custom sync engine) and a <b>MySQL → StarRocks</b> data-migration ELT pipeline on AWS DMS, Kinesis and Lambda.</p>
+          <div class="bullets"><span>Team Leadership</span><span>AI / RAG</span><span>Pinecone</span><span>LLM Agnostic</span><span>Electron</span><span>SQLite</span><span>StarRocks</span><span>AWS</span></div>
+        </div>
+      </div>
+      <div class="job" data-reveal data-delay="100">
+        <div class="meta"><div class="when">Jul 2023 — Sep 2024</div><div class="where">RChilli Inc · Mohali, Punjab</div></div>
+        <div class="body">
+          <div class="role">Software Engineer</div>
+          <p class="desc">Built and shipped full-stack features across the Enrich product suite — React.js UI components and Spring Boot services — improving page load times, cutting server response time and raising code quality. Consistently hit 85–88% test coverage with Jest and Mockito.</p>
+          <div class="bullets"><span>React.js</span><span>Redux-Saga</span><span>Spring Boot</span><span>MySQL</span><span>Jest</span><span>Mockito</span></div>
+        </div>
+      </div>
+      <div class="job" data-reveal data-delay="200">
+        <div class="meta"><div class="when">Feb 2023 — Jun 2023</div><div class="where">Geekster · Gurgaon (Remote)</div></div>
+        <div class="body">
+          <div class="role">Teaching Associate — Internship</div>
+          <p class="desc">Mentored students one-on-one in Java, DSA, Spring Boot and MySQL, resolving doubts and clarifying complex concepts. Created supplementary learning materials and resources to support and enhance the student learning experience.</p>
+          <div class="bullets"><span>Java</span><span>DSA</span><span>Spring Boot</span><span>MySQL</span><span>Mentoring</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects section-pad" id="projects" data-screen-label="Projects">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Selected work</span>
+    <h2 class="section-title" data-reveal data-delay="60">Projects I'm proud of</h2>
+    <div class="projects-grid">
+      <article class="project-card magnetic" data-tilt data-reveal data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">01 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#2a4cf0,#0a1342)">🤖</div>
+        <h3>QMentis — AI Quality Platform</h3>
+        <p>Led the team building an AI platform that refines stories &amp; bugs and generates test cases and test designs. Deep two-way <b>Jira integration</b> plus a <b>RAG</b> pipeline on a <b>Pinecone</b> vector DB — made fully <b>LLM-agnostic</b> and delivered in 8 months.</p>
+        <div class="pc-stack"><span>RAG</span><span>Pinecone</span><span>LLM Agnostic</span><span>Jira API</span><span>Spring Boot</span></div>
+      </article>
+      <article class="project-card magnetic" data-tilt data-reveal data-delay="80" data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">02 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#ffd21e,#f5b700)">📈</div>
+        <h3>Configurable Dashboard</h3>
+        <p>A no-code dashboard product — users compose dashboards through configuration instead of code, then publish them straight to the platform for their teams.</p>
+        <div class="pc-stack"><span>React.js</span><span>Config-driven</span><span>Spring Boot</span></div>
+      </article>
+      <article class="project-card magnetic" data-tilt data-reveal data-delay="120" data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">03 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#0a1342,#2a4cf0)">🖥️</div>
+        <h3>Offline-First Desktop App</h3>
+        <p>Brought the full web platform into a cross-platform <b>Electron</b> desktop app with <b>SQLite</b> for in-app storage. Built a <b>sync engine</b> — work done offline is saved locally and automatically synced to the cloud database once the user is back online.</p>
+        <div class="pc-stack"><span>Electron</span><span>SQLite</span><span>Sync Engine</span><span>Offline-first</span></div>
+      </article>
+      <article class="project-card magnetic" data-tilt data-reveal data-delay="160" data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">04 · VOLTUSWAVE</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#1a32b8,#5e79ff)">🗄️</div>
+        <h3>MySQL → StarRocks Migration</h3>
+        <p>Migrated data from <b>MySQL</b> to a <b>StarRocks</b> warehouse to power the dashboards, running an <b>ELT</b> pipeline with <b>AWS DMS, Kinesis</b> and <b>Lambda</b> before loading into StarRocks.</p>
+        <div class="pc-stack"><span>StarRocks</span><span>AWS DMS</span><span>Kinesis</span><span>Lambda</span><span>ELT</span></div>
+      </article>
+      <article class="project-card magnetic" data-tilt data-reveal data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">05 · RCHILLI</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#2a4cf0,#1a32b8)">🛒</div>
+        <h3>Enrich Shopping Cart</h3>
+        <p>Admin &amp; user UI in React.js plus Spring Boot backend services — improved page load time and reduced server response time, with 85–88% coverage across Jest (UI) and Mockito (API).</p>
+        <div class="pc-stack"><span>React.js</span><span>Spring Boot</span><span>MySQL</span></div>
+      </article>
+      <article class="project-card magnetic" data-tilt data-reveal data-delay="80" data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">06 · RCHILLI</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#0a1342,#2a4cf0)">📊</div>
+        <h3>Automate Taxonomy KPI</h3>
+        <p>Automated data retrieval into CSV files, saving several hours of manual work each week. Achieved 85–88% code coverage using Mockito.</p>
+        <div class="pc-stack"><span>Spring Boot</span><span>Java</span><span>Mockito</span></div>
+      </article>
+      <article class="project-card magnetic" data-tilt data-reveal data-delay="120" data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">07 · PERSONAL</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#f5b700,#2a4cf0)">📝</div>
+        <h3>Blogging Platform API</h3>
+        <p>A social-media platform with full CRUD for posts and comments, keyword search and user-follow features — deployed on AWS EC2.</p>
+        <div class="pc-stack"><span>Spring Boot</span><span>Hibernate</span><span>AWS EC2</span><span>Swagger</span></div>
+      </article>
+      <article class="project-card magnetic" data-tilt data-reveal data-delay="160" data-magnetic="0.08">
+        <div class="pc-top"><span class="pc-num">08 · PERSONAL</span><span class="pc-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        <div class="pc-thumb" style="background:linear-gradient(135deg,#0a1342,#1a32b8)">🚗</div>
+        <h3>Car Servicing Garage</h3>
+        <p>A billing system for vehicle services built with Core Java and OOP concepts like loops and HashMap for clean, maintainable logic.</p>
+        <div class="pc-stack"><span>Core Java</span><span>OOP</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills section-pad" id="skills" data-screen-label="Skills">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Toolkit</span>
+    <h2 class="section-title" data-reveal data-delay="60">Skills &amp; technologies</h2>
+    <div class="skills-grid">
+      <div class="skill-col" data-reveal>
+        <div class="sc-ic">⚛️</div>
+        <h3>Frontend</h3>
+        <div class="skill-bar"><div class="sb-top"><span>React.js</span><span>90%</span></div><div class="sb-track"><div class="sb-fill" style="--w:90%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>Redux / Redux-Saga</span><span>86%</span></div><div class="sb-track"><div class="sb-fill" style="--w:86%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>HTML / CSS / JS</span><span>92%</span></div><div class="sb-track"><div class="sb-fill" style="--w:92%"></div></div></div>
+      </div>
+      <div class="skill-col" data-reveal data-delay="100">
+        <div class="sc-ic">🍃</div>
+        <h3>Backend</h3>
+        <div class="skill-bar"><div class="sb-top"><span>Java / DSA</span><span>88%</span></div><div class="sb-track"><div class="sb-fill" style="--w:88%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>Spring Boot / Microservices</span><span>85%</span></div><div class="sb-track"><div class="sb-fill" style="--w:85%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>Hibernate / MySQL</span><span>84%</span></div><div class="sb-track"><div class="sb-fill" style="--w:84%"></div></div></div>
+      </div>
+      <div class="skill-col" data-reveal data-delay="200">
+        <div class="sc-ic">🧪</div>
+        <h3>Testing &amp; Tools</h3>
+        <div class="skill-bar"><div class="sb-top"><span>Jest / Enzyme</span><span>85%</span></div><div class="sb-track"><div class="sb-fill" style="--w:85%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>JUnit 5 / Mockito</span><span>87%</span></div><div class="sb-track"><div class="sb-fill" style="--w:87%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>Git / Postman / Swagger</span><span>88%</span></div><div class="sb-track"><div class="sb-fill" style="--w:88%"></div></div></div>
+      </div>
+      <div class="skill-col" data-reveal data-delay="300">
+        <div class="sc-ic">🤖</div>
+        <h3>AI &amp; Cloud</h3>
+        <div class="skill-bar"><div class="sb-top"><span>RAG / LLM Integration</span><span>87%</span></div><div class="sb-track"><div class="sb-fill" style="--w:87%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>Pinecone / Vector DB</span><span>84%</span></div><div class="sb-track"><div class="sb-fill" style="--w:84%"></div></div></div>
+        <div class="skill-bar"><div class="sb-top"><span>AWS · Lambda, S3, Cognito</span><span>85%</span></div><div class="sb-track"><div class="sb-fill" style="--w:85%"></div></div></div>
+      </div>
+    </div>
+    <div class="about-tags" data-reveal data-delay="120" style="margin-top:28px;justify-content:center">
+      <span class="chip">REST API</span>
+      <span class="chip">RAG</span>
+      <span class="chip">Pinecone</span>
+      <span class="chip">Electron</span>
+      <span class="chip">SQLite</span>
+      <span class="chip">StarRocks</span>
+      <span class="chip">AWS DMS</span>
+      <span class="chip">Lambda</span>
+      <span class="chip">Kinesis</span>
+      <span class="chip">SQS</span>
+      <span class="chip">SNS</span>
+      <span class="chip">SES</span>
+      <span class="chip">Cognito</span>
+      <span class="chip">IAM</span>
+      <span class="chip">S3</span>
+      <span class="chip">ELT</span>
+      <span class="chip">OOP</span>
+      <span class="chip">Agile</span>
+      <span class="chip">Scrum</span>
+      <span class="chip">GitHub</span>
+      <span class="chip">Bitbucket</span>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTIFICATIONS -->
+<section class="education section-pad" id="education" data-screen-label="Education">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Background</span>
+    <h2 class="section-title" data-reveal data-delay="60">Education &amp; certifications</h2>
+    <div class="edu-grid">
+      <div class="edu-list">
+        <div class="edu-item" data-reveal>
+          <span class="yr">2021</span>
+          <div><div class="deg">B.Tech</div><div class="inst">JNTU — Jawaharlal Nehru Technological University</div></div>
+          <span class="score">8.0 CGPA</span>
+        </div>
+        <div class="edu-item" data-reveal data-delay="80">
+          <span class="yr">2017</span>
+          <div><div class="deg">Intermediate (12th)</div><div class="inst">TSBIE</div></div>
+          <span class="score">89.0%</span>
+        </div>
+        <div class="edu-item" data-reveal data-delay="160">
+          <span class="yr">2015</span>
+          <div><div class="deg">SSC (10th)</div><div class="inst">TSBSE</div></div>
+          <span class="score">8.8 CGPA</span>
+        </div>
+      </div>
+      <div class="cert-card" data-reveal="right" data-delay="120">
+        <h3>Certifications</h3>
+        <div class="cert-row"><span class="tick">✓</span><span>MySQL Certification — Geekster platform</span></div>
+        <div class="cert-row"><span class="tick">✓</span><span>Agile &amp; Scrum — Itronix Solutions</span></div>
+        <h3 style="margin-top:26px">Coding profiles</h3>
+        <div class="cert-langs">
+          <span>LeetCode</span>
+          <span>GeeksforGeeks</span>
+          <span>HackerRank</span>
+        </div>
+        <h3 style="margin-top:26px">Languages</h3>
+        <div class="cert-langs">
+          <span>English</span>
+          <span>Hindi</span>
+          <span>Telugu</span>
+          <span>Bhojpuri</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section-pad" id="contact" data-screen-label="Contact">
+  <div class="contact-blob cb-1" data-parallax="0.1"></div>
+  <div class="contact-blob cb-2" data-parallax="0.14"></div>
+  <div class="wrap contact-inner">
+    <span class="eyebrow" data-reveal>Get in touch</span>
+    <h2 data-reveal data-delay="80">Let's build<br>something <span class="hl">great.</span></h2>
+    <p data-reveal data-delay="160">Looking for a full-stack engineer who sweats the details? I'm open to new opportunities — let's talk.</p>
+    <div class="contact-actions" data-reveal data-delay="220">
+      <a href="/cdn-cgi/l/email-protection#592a3831383730686060616069193e34383035773a3634" class="btn btn-primary magnetic" data-magnetic="0.3">
+        <span class="__cf_email__" data-cfemail="c2b1a3aaa3acabf3fbfbfafbf282a5afa3abaeeca1adaf">[email&#160;protected]</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+      </a>
+      <a href="tel:+918639897979" class="btn btn-ghost magnetic" data-magnetic="0.3" style="box-shadow:inset 0 0 0 2px rgba(255,255,255,.4);color:#fff">+91-8639897979</a>
+    </div>
+    <div class="socials" data-reveal data-delay="280">
+      <a class="social-link" href="https://www.linkedin.com/in/01abhishek-sahani/" target="_blank" rel="noopener">in</a>
+      <a class="social-link" href="#" target="_blank" rel="noopener" title="GitHub — add your link">GH</a>
+      <a class="social-link" href="#" target="_blank" rel="noopener" title="LeetCode — add your link">LC</a>
+      <a class="social-link" href="/cdn-cgi/l/email-protection#82f1e3eae3ecebb3bbbbbabbb2c2e5efe3ebeeace1edef" title="Email">@</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="mark">AS</span> Abhishek Sahani</a>
+    <span class="copyright">© 2026 Abhishek Sahani · Full-Stack Software Engineer</span>
+    <a href="#top" class="to-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="animations.js"></script>
+</body>
+</html>
