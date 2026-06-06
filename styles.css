@@ -255,19 +255,115 @@ section { position: relative; }
   mix-blend-mode: difference;
 }
 
-/* Hero portrait card */
+/* Hero animated orbit */
 .hero-card { position: relative; opacity: 0; animation: fadeUp 1s var(--ease) .5s forwards; }
-.portrait {
+.hero-orbit {
   position: relative; aspect-ratio: 4/5; border-radius: 26px; overflow: hidden;
-  background: linear-gradient(150deg, var(--navy), var(--blue-700));
+  background: radial-gradient(125% 120% at 50% 32%, var(--blue-700) 0%, var(--navy) 52%, var(--navy-900) 100%);
   box-shadow: 0 40px 80px -30px rgba(10,19,66,.55); z-index: 2;
+  display: grid; place-items: center;
 }
-.portrait .ph-emoji { position: absolute; inset: 0; display: grid; place-items: center; font-size: 120px; opacity: .9; }
-.portrait .ph-label {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 22px;
+/* subtle dotted backdrop */
+.orbit-grid {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1px);
+  background-size: 22px 22px; opacity: .5;
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 35%, transparent 78%);
+          mask-image: radial-gradient(circle at 50% 45%, #000 35%, transparent 78%);
+}
+.orbit-glow {
+  position: absolute; width: 58%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,210,30,.40), rgba(42,76,240,.18) 45%, transparent 68%);
+  filter: blur(8px); animation: orbGlow 5s var(--ease) infinite;
+}
+@keyframes orbGlow {
+  0%, 100% { opacity: .55; transform: scale(.92); }
+  50%      { opacity: .95; transform: scale(1.08); }
+}
+
+/* concentric rotating rings, centred on the card */
+.orbit-ring {
+  position: absolute; top: 50%; left: 50%; aspect-ratio: 1; border-radius: 50%;
+  transform: translate(-50%, -50%); border: 1px solid rgba(255,255,255,.14);
+  transform-origin: center;
+}
+.ring-1 { width: 40%; animation: spin 13s linear infinite; }
+.ring-2 { width: 64%; border-style: dashed; border-color: rgba(255,210,30,.32); animation: spin 21s linear infinite reverse; }
+.ring-3 { width: 90%; border-color: rgba(255,255,255,.10); animation: spin 32s linear infinite; }
+
+/* a tech node sits on its ring and revolves with it */
+.orbit-node {
+  position: absolute; top: -21px; left: 50%; width: 42px; height: 42px;
+  margin-left: -21px; border-radius: 13px; display: grid; place-items: center;
+  background: var(--white); box-shadow: 0 12px 26px -10px rgba(0,0,0,.6);
+}
+/* node placement around its ring (position only → icon stays upright via counter-spin) */
+.orbit-node.node-b { top: auto; bottom: -21px; }
+.orbit-node.node-r { top: 50%; left: auto; right: -21px; margin-left: 0; margin-top: -21px; }
+.orbit-node.node-l { top: 50%; left: -21px; margin-left: 0; margin-top: -21px; }
+.orbit-node.node-tr,
+.orbit-node.node-bl {
+  margin: 0; transform: translate(-50%, -50%);
+}
+.orbit-node.node-tr { top: 14.64%; left: 85.36%; }
+.orbit-node.node-bl { top: 85.36%; left: 14.64%; }
+.on-i { display: grid; place-items: center; font-size: 21px; line-height: 1; }
+.on-i.small {
+  font-family: var(--font-display); font-weight: 700; font-size: 11px;
+  letter-spacing: .02em; color: var(--blue);
+}
+/* counter-rotate each icon so it always stays upright */
+.ci-1 { animation: spin 13s linear infinite reverse; }
+.ci-2 { animation: spin 21s linear infinite; }
+.ci-3 { animation: spin 32s linear infinite reverse; }
+
+/* floating sparks */
+.orbit-spark {
+  position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow);
+  box-shadow: 0 0 12px 2px rgba(255,210,30,.7); animation: sparkFloat 6s var(--ease) infinite;
+}
+.sp-1 { top: 18%; left: 22%; animation-delay: 0s; }
+.sp-2 { top: 70%; left: 16%; width: 5px; height: 5px; background: #6f8bff; box-shadow: 0 0 12px 2px rgba(111,139,255,.7); animation-delay: 1.4s; }
+.sp-3 { top: 30%; right: 18%; width: 6px; height: 6px; animation-delay: 2.6s; }
+@keyframes sparkFloat {
+  0%, 100% { transform: translateY(0); opacity: .35; }
+  50%      { transform: translateY(-14px); opacity: 1; }
+}
+
+/* central glowing core */
+.orbit-core {
+  position: relative; z-index: 3; width: 92px; height: 92px; border-radius: 24px;
+  display: grid; place-items: center;
+  background: linear-gradient(150deg, var(--yellow), var(--yellow-deep));
+  box-shadow: 0 0 0 8px rgba(255,210,30,.12), 0 22px 50px -16px rgba(245,183,0,.75);
+  animation: corePulse 3.4s var(--ease) infinite;
+}
+.orbit-core::before {
+  content: ''; position: absolute; inset: -8px; border-radius: 30px;
+  border: 2px solid rgba(255,210,30,.35); animation: coreRipple 3.4s var(--ease) infinite;
+}
+.core-code { font-family: var(--font-display); font-weight: 700; font-size: 30px; color: var(--surface-invert); letter-spacing: -.04em; }
+@keyframes corePulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+@keyframes coreRipple {
+  0%   { transform: scale(1); opacity: .8; }
+  70%  { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.orbit-label {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 22px; text-align: center;
   background: linear-gradient(transparent, rgba(6,12,46,.85)); color: var(--text-invert);
-  font-size: 13px; font-weight: 600; letter-spacing: .04em;
+  font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-glow, .orbit-ring, .ci-1, .ci-2, .ci-3,
+  .orbit-spark, .orbit-core, .orbit-core::before { animation: none; }
+}
+
 .hero-badge {
   position: absolute; z-index: 4; background: var(--white); border-radius: 16px;
   box-shadow: 0 18px 40px -18px rgba(10,19,66,.5); padding: 13px 16px; display: flex; align-items: center; gap: 11px;
