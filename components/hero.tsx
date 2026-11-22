@@ -30,7 +30,7 @@ export function Hero() {
               </a>
               <a
                 className="cta secondary"
-                href="/resume.pdf"
+                href="resume.pdf"
                 download="Abhishek-Sahani-Resume.pdf"
               >
                 <Download size={16} /> Download Resume
