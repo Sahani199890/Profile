@@ -1,0 +1,64 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 3588 >>
+stream
+BT /F1 22 Tf 48 748 Td (Abhishek Sahani) Tj ET
+BT /F1 11 Tf 48 726 Td (Software Engineer | Java Full Stack Developer | AI Engineer) Tj ET
+BT /F1 9.5 Tf 48 710 Td (Software engineer building scalable Java backends, modern React frontends, and AI-powered solutions.) Tj ET
+BT /F1 13 Tf 48 688 Td (Experience) Tj ET
+BT /F1 10.5 Tf 48 670 Td (Voltuswave Private Limited | Software Engineer) Tj ET
+BT /F1 8.5 Tf 48 658 Td (November 2024 - Present) Tj ET
+BT /F1 9 Tf 48 644 Td (- QMentis-AI: Led 12 developers through an 8-month delivery cycle; built LangChain & RAG modules, LLM integration.) Tj ET
+BT /F1 9 Tf 48 632 Td (- Dashboard Builder: Developed interactive dashboards with Jira integrations and AWS SQS actions.) Tj ET
+BT /F1 9 Tf 48 620 Td (- Global E-invoicing Integration: Engineered compliance workflows for electronic invoicing integration.) Tj ET
+BT /F1 9 Tf 48 608 Td (- Freight Desktop Application: Contributed to building operations desktop app using Electron JS.) Tj ET
+BT /F1 10.5 Tf 48 588 Td (RChilli Inc. | Software Engineer) Tj ET
+BT /F1 8.5 Tf 48 576 Td (Mohali, Punjab) Tj ET
+BT /F1 9 Tf 48 562 Td (- Enrich Shopping Cart: Full-stack cart; OAuth \(Google, LinkedIn, Facebook\), Stripe, React, Spring Boot.) Tj ET
+BT /F1 9 Tf 48 550 Td (- AutomateTaxonomyKPI: Automated CSV export; 85-88% Mockito code coverage. Tech Stack: Spring Boot.) Tj ET
+BT /F1 9 Tf 48 538 Td (- FilterRelatedSkillJobProfile: Deleted redundant data, reduced DB size. Tech Stack: Core Java, MySQL.) Tj ET
+BT /F1 9 Tf 48 526 Td (- Accuracy Tool & Skill Taxonomy Tool: Boosted perf by 20%; 85-88% Mockito coverage. Tech Stack: Java JSP.) Tj ET
+BT /F1 10.5 Tf 48 506 Td (Geekster | Teaching Associate) Tj ET
+BT /F1 9 Tf 48 492 Td (- Hands-on exercises and mentorship in Java, data structures & algorithms, Spring Boot, and MySQL.) Tj ET
+BT /F1 13 Tf 48 468 Td (Delivered & Featured Projects) Tj ET
+BT /F1 9 Tf 48 450 Td (- QMentis-AI: Team lead, LangChain, RAG modules, and LLM integration \(Voltuswave Private Limited\)) Tj ET
+BT /F1 9 Tf 48 438 Td (- Dashboard Builder: Interactive dashboards, Jira integrations & AWS SQS actions \(Voltuswave\)) Tj ET
+BT /F1 9 Tf 48 426 Td (- Global E-invoicing Integration: Enterprise compliance and electronic invoicing \(Voltuswave\)) Tj ET
+BT /F1 9 Tf 48 414 Td (- Desktop Application \(Freight\): Operations desktop application using Electron JS \(Voltuswave\)) Tj ET
+BT /F1 9 Tf 48 402 Td (- Enrich Shopping Cart: Full-stack cart with Stripe, OAuth \(Google, LinkedIn, Facebook\), React, Spring Boot) Tj ET
+BT /F1 9 Tf 48 390 Td (- AutomateTaxonomyKPI: Automated CSV retrieval; 85-88% Mockito code coverage \(RChilli\)) Tj ET
+BT /F1 9 Tf 48 378 Td (- FilterRelatedSkillJobProfile: Production DB cleanup reducing size and boosting query speed \(RChilli\)) Tj ET
+BT /F1 9 Tf 48 366 Td (- Accuracy Tool & Skill Taxonomy Tool: Java JSP optimization boosting performance by 20% \(RChilli\)) Tj ET
+BT /F1 13 Tf 48 342 Td (Technical Skills) Tj ET
+BT /F1 9 Tf 48 324 Td (Languages & Backend: Java 8, Spring Boot, Spring MVC, Spring Security, Hibernate, JPA, REST APIs) Tj ET
+BT /F1 9 Tf 48 312 Td (Frontend & Desktop: React.js, React TypeScript, Redux, Redux-Saga, Electron JS, HTML5, CSS3, Bootstrap) Tj ET
+BT /F1 9 Tf 48 300 Td (AI & Microservices: LangChain, RAG, MCP, Agentic AI, LLM Integration, Spring Cloud, Eureka, Resilience4j) Tj ET
+BT /F1 9 Tf 48 288 Td (Databases & Messaging: MySQL, AWS DynamoDB, H2 Database, Apache Kafka, AWS SQS) Tj ET
+BT /F1 9 Tf 48 276 Td (DevOps & Testing: AWS EC2, S3, Docker, Jenkins, JUnit 5, Mockito, Jest, Postman, Git) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3951
+%%EOF
