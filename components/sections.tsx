@@ -113,31 +113,33 @@ export function About() {
         <Heading n="03" label="PROFILE" title="About Me" />
         <div className="prose">
           <p>
-            I build software across the stack, from Java services and cloud
-            integrations to responsive React interfaces. At Voltuswave Private Limited,
-            I led the QMentis-AI team and worked on Dashboard Builder, Global
-            E-invoicing integration, and the Desktop application (Freight) using Electron JS.
-            At RChilli Inc., I delivered the Enrich Shopping Cart, automated taxonomy
-            KPI retrieval pipelines, and optimized high-scale production databases.
+            I am a Java Full Stack Developer with 4+ years of experience designing,
+            developing, and supporting enterprise applications across the Java and React
+            ecosystems. At Voltuswave Private Limited, I led 14 engineers to deliver
+            QMentis (an enterprise AI platform with RAG and MCP), built the Agentic Dashboard
+            Builder, integrated enterprise tax-compliance systems (Adaequare GST &amp; Tronstride UAE E-Invoicing APIs),
+            and contributed to the Freight desktop application. At RChilli Inc, I delivered the
+            Enrich Shopping Cart, automated taxonomy KPI data retrieval pipelines, and optimized
+            high-scale production MySQL databases.
           </p>
           <div className="metrics">
             <div>
-              <b>12</b>
-              <span>Developers led</span>
+              <b>14</b>
+              <span>Engineers led</span>
             </div>
             <div>
               <b>8</b>
               <span>Month delivery cycle</span>
             </div>
             <div>
-              <b>{projects.length}</b>
-              <span>Featured projects</span>
+              <b>4+</b>
+              <span>Years experience</span>
             </div>
           </div>
           <div className="education">
             <GraduationCap />
             <div>
-              <h3>Education</h3>
+              <h3>Education &amp; Certifications</h3>
               <p>
                 {[
                   profile.education.degree,
@@ -145,8 +147,13 @@ export function About() {
                   profile.education.dates,
                 ]
                   .filter(Boolean)
-                  .join(" · ") || "Education details to be added."}
+                  .join(" · ")}
               </p>
+              {profile.certifications && profile.certifications.length > 0 && (
+                <small style={{ display: "block", marginTop: "4px", color: "var(--muted)" }}>
+                  Certifications: {profile.certifications.join(" · ")}
+                </small>
+              )}
             </div>
           </div>
         </div>

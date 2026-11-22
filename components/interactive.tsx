@@ -136,7 +136,12 @@ export function Socials() {
               <Mail size={16} />
             );
           return url ? (
-            <a key={name} href={url}>
+            <a
+              key={name}
+              href={url}
+              target={url.startsWith("mailto:") ? undefined : "_blank"}
+              rel={url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+            >
               {icon}
               {name}
               <ArrowUpRight size={12} />
